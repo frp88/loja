@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pEinK0Sc5pjptUWisQCJvfhK9TJXLEYstCYJ1PQaWZH7Ca11jc9RgE1LxmgyzQaOLNBgl8Hkl9xM4zW4MN1eIQ==",
+  "dgSpecHash": "LiC7IN0QOmeCCK033OIKk98ZApHqYIB9ZlO4d7LVxMJDdMK41YpliJs7X1/NrfC+ZgQmsdvgyWYZSuoycwxjCQ==",
   "success": true,
-  "projectFilePath": "D:\\Documentos\\GitHub\\loja\\back\\loja.api\\Loja.API.csproj",
+  "projectFilePath": "D:\\Documentos\\GitHub\\loja\\Back\\loja.api\\Loja.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ferna\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\ferna\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

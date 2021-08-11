@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documentos\\GitHub\\loja\\back\\loja.api\\Loja.API.csproj": {}
+    "D:\\Documentos\\GitHub\\loja\\Back\\loja.api\\Loja.API.csproj": {}
   },
   "projects": {
-    "D:\\Documentos\\GitHub\\loja\\back\\loja.api\\Loja.API.csproj": {
+    "D:\\Documentos\\GitHub\\loja\\Back\\loja.api\\Loja.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documentos\\GitHub\\loja\\back\\loja.api\\Loja.API.csproj",
+        "projectUniqueName": "D:\\Documentos\\GitHub\\loja\\Back\\loja.api\\Loja.API.csproj",
         "projectName": "Loja.API",
-        "projectPath": "D:\\Documentos\\GitHub\\loja\\back\\loja.api\\Loja.API.csproj",
+        "projectPath": "D:\\Documentos\\GitHub\\loja\\Back\\loja.api\\Loja.API.csproj",
         "packagesPath": "C:\\Users\\ferna\\.nuget\\packages\\",
-        "outputPath": "D:\\Documentos\\GitHub\\loja\\back\\loja.api\\obj\\",
+        "outputPath": "D:\\Documentos\\GitHub\\loja\\Back\\loja.api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ferna\\AppData\\Roaming\\NuGet\\NuGet.Config",
