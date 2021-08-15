@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documentos\\GitHub\\loja\\Back\\loja.api\\Loja.API.csproj": {}
+    "C:\\Users\\ferna\\Documents\\GitHub\\loja\\back\\loja.api\\Loja.API.csproj": {}
   },
   "projects": {
-    "D:\\Documentos\\GitHub\\loja\\Back\\loja.api\\Loja.API.csproj": {
+    "C:\\Users\\ferna\\Documents\\GitHub\\loja\\back\\loja.api\\Loja.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documentos\\GitHub\\loja\\Back\\loja.api\\Loja.API.csproj",
+        "projectUniqueName": "C:\\Users\\ferna\\Documents\\GitHub\\loja\\back\\loja.api\\Loja.API.csproj",
         "projectName": "Loja.API",
-        "projectPath": "D:\\Documentos\\GitHub\\loja\\Back\\loja.api\\Loja.API.csproj",
+        "projectPath": "C:\\Users\\ferna\\Documents\\GitHub\\loja\\back\\loja.api\\Loja.API.csproj",
         "packagesPath": "C:\\Users\\ferna\\.nuget\\packages\\",
-        "outputPath": "D:\\Documentos\\GitHub\\loja\\Back\\loja.api\\obj\\",
+        "outputPath": "C:\\Users\\ferna\\Documents\\GitHub\\loja\\back\\loja.api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ferna\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\ferna\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -63,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
