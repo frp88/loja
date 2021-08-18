@@ -61,13 +61,11 @@ namespace Loja.API.Controllers {
 
         // Método Delete
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id){
-            // Verifica se existe um objeto com o ID igual ao ID passado como parâmetro
-            if (produtos.Where(p => p.Id == id).Count() > 0){
-                // Então foi encontrado um produto com o ID passado como parâmetro
-                // Selecionar o produto que deverá ser removido
-                Produto produtoSelecionado = produtos.Where(
-                    p => p.Id == id).ToList()[0];
+        public IActionResult Delete(int id) {
+            // Selecionar o produto que deverá ser removido
+            Produto produtoSelecionado = produtos.FirstOrDefault(p => p.Id == id);
+            // Verificar o produto selecionado é diferente de nulo
+            if (produtoSelecionado != null){
                 // Remove o produto da lista
                 produtos.Remove(produtoSelecionado);
                 // Retorna um resultado para o cliente
