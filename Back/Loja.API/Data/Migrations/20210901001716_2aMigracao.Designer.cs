@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Loja.API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210831011332_Initial")]
-    partial class Initial
+    [Migration("20210901001716_2aMigracao")]
+    partial class _2aMigracao
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Loja.API.Data.Migrations
 {
-    public partial class Initial : Migration
+    public partial class _2aMigracao : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
