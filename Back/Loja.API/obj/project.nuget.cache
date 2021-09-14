@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OXA7KF8bCV5JfnIgdbI7Vl8HtR95/Fn7X51ST+Fac5hkxWCNGFpQDoVsJU20g7rujHzQqOWOINHPpW2yc6JrUw==",
+  "dgSpecHash": "D5QvP3Bw5IVLAk+1YAnFNo12CJ13iA3XrNWkbhSSE4t46nK0uvp4Ne3HEF141dy7X/EeFy5q/znq9JjQvi7I/w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ferna\\Documents\\GitHub\\loja\\back\\loja.api\\Loja.API.csproj",
+  "projectFilePath": "C:\\Users\\ferna\\Documents\\GitHub\\loja\\Back\\Loja.API\\Loja.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ferna\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ferna\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

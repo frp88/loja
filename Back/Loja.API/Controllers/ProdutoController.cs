@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Loja.API.Models;
+using Loja.API.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Loja.API.Controllers {
@@ -8,70 +9,88 @@ namespace Loja.API.Controllers {
     [Route("api/[controller]")]
     public class ProdutoController : ControllerBase {
 
+        // declara um objeto da interface 
+         private readonly IProdutoService _produtoService;
+
         // Lista estática de produtos
-        public static List<Produto> produtos = new List<Produto>();
+        //public static List<Produto> produtos = new List<Produto>();
 
-        public ProdutoController(){
-            if (produtos.Count <= 0){
-                Produto produto = new Produto() { 
-                    Id = 1, Nome = "Tênis", Estoque = 10, Valor = 159.99 
-                };
-                produtos.Add(produto);
+        public ProdutoController(IProdutoService produtoService){
+            _produtoService = produtoService;
+            // if (produtos.Count <= 0){
+            //     Produto produto = new Produto() { 
+            //         Id = 1, Nome = "Tênis", Estoque = 10, Valor = 159.99 
+            //     };
+            //     produtos.Add(produto);
                 
-                produto = new Produto(){
-                    Id= 2, Nome = "Camiseta", Estoque = 15, Valor = 89.78
-                };
-                produtos.Add(produto);
+            //     produto = new Produto(){
+            //         Id= 2, Nome = "Camiseta", Estoque = 15, Valor = 89.78
+            //     };
+            //     produtos.Add(produto);
 
-                produto = new Produto(){
-                    Id= 3, Nome = "Boné", Estoque = 7, Valor = 55.45
-                };
-                produtos.Add(produto);
-            }
+            //     produto = new Produto(){
+            //         Id= 3, Nome = "Boné", Estoque = 7, Valor = 55.45
+            //     };
+            //     produtos.Add(produto);
+            // }
          }
 
         // Método Get
         [HttpGet]
-        public IActionResult Get(){            
+        public IActionResult Get(){    
+            var produtos = _produtoService.Buscar();        
+            if (produtos == null)
+                return NotFound();
             return Ok(produtos); // Retorna um resultado correto
         }
 
         // Método Get com filtro (ID)
         [HttpGet("{id}")]
         public IActionResult Get(int id){
-            var produtoSelecionado = produtos.Where(
-                prod => prod.Id == id );
+            var produtoSelecionado = _produtoService.BuscarPorId(id);
+            if (produtoSelecionado == null)
+                return NotFound();
             return Ok(produtoSelecionado);
+        }
+
+        [HttpGet("buscar/{nome}")]
+        public IActionResult GetByName(string nome){
+            var produtos = _produtoService.BuscarPorNome(nome);
+            if (produtos == null) { 
+                return NotFound(); 
+            } else { 
+                return Ok(produtos); 
+            }
         }
 
         // Método Post
         [HttpPost]
         public IActionResult Post([FromBody] Produto novoProduto){
-            // Adicionar o produto na lista
-            produtos.Add(novoProduto);
+            // Adicionar o produto na tabela do BD
+            Produto produtoAdicionado = _produtoService.Adicionar(novoProduto);
             // Retornar para o cliente o produto adicionado na lista
-            return Created("", novoProduto);
+            return Created("", produtoAdicionado);
         }
 
         // Método Put
         [HttpPut("{id}")]
-        public string Put(int id){
-            return $"Exemplo de Put com id = {id}";
+        public IActionResult Put(int id, [FromBody] Produto produtoAtual) {
+            produtoAtual = _produtoService.Atualizar(id, produtoAtual);
+            if (produtoAtual == null) {
+                return NotFound();
+            }
+            return Ok(produtoAtual);
         }
 
         // Método Delete
         [HttpDelete("{id}")]
         public IActionResult Delete(int id) {
-            // Selecionar o produto que deverá ser removido
-            Produto produtoSelecionado = produtos.FirstOrDefault(p => p.Id == id);
-            // Verificar o produto selecionado é diferente de nulo
-            if (produtoSelecionado != null){
-                // Remove o produto da lista
-                produtos.Remove(produtoSelecionado);
-                // Retorna um resultado para o cliente
-                return NoContent();
+            bool remocaoOk = _produtoService.Remover(id);
+            // Verificar se o produto foi excluido
+            if (remocaoOk == false) {
+                return NotFound();
             }
-            return NotFound();
+            return NoContent();
         }
     }
 }

@@ -49,6 +49,9 @@ namespace Loja.API.Services {
             // Verifica se não retornou nenhum produto
             if (produto == null)
                 return null;
+            // Atualizar os dados do produto retornado do Contexto
+            produto.AtualizarProduto(produtoAtualizado.Nome, produtoAtualizado.Estoque, produtoAtualizado.Valor);
+
             // Atualizar o produto no contexto do EF
             _context.Update(produto);
             // Salva as alterações do produto na tabela do BD
