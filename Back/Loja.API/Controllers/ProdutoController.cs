@@ -92,5 +92,15 @@ namespace Loja.API.Controllers {
             }
             return NoContent();
         }
+
+        [HttpGet("ordenar/{ordenarPor}")]
+        public IActionResult GetByOrder(string ordenarPor, string crescenteOuDescrescente){
+            var produtosOrdenados = _produtoService.OrdenarProdutos(ordenarPor, crescenteOuDescrescente);
+            if (produtosOrdenados == null){
+                return NotFound();
+            }
+            return Ok(produtosOrdenados);
+        }
+
     }
 }

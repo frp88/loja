@@ -26,7 +26,7 @@ namespace Loja.API.Services {
         }
         public IEnumerable<Produto> BuscarPorNome(string nome){
             var produtos = _context.Produtos.Where(
-                p => p.Nome.Contains(nome)
+                p => p.Nome.ToLower().Contains(nome.ToLower())
             );
             if (produtos == null || produtos.ToList().Count == 0)
                 return null;
@@ -69,6 +69,22 @@ namespace Loja.API.Services {
             // Remover o produto a tabela do BD
             _context.SaveChanges();
             return true;
+        }
+
+        // Método que ordena os elementos da lista de produtos
+        public IEnumerable<Produto> OrdenarProdutos(string ordenarPor, string crescenteOuDescrescente){
+            char ordem = (string.IsNullOrEmpty(crescenteOuDescrescente) ? 'C' : 
+            crescenteOuDescrescente.ToUpper()[0]);
+            switch (ordenarPor) {
+                case "nome":
+                    return (ordem == 'D' ? _context.Produtos.OrderByDescending(p => p.Nome) : _context.Produtos.OrderBy(p => p.Nome) );
+                case "estoque":
+                    return (ordem == 'D' ? _context.Produtos.OrderByDescending(p => p.Estoque) : _context.Produtos.OrderBy(p => p.Estoque) );
+                case "valor":
+                    return (ordem == 'D' ? _context.Produtos.OrderByDescending(p => p.Valor) : _context.Produtos.OrderBy(p => p.Valor) );
+                default:
+                    return (ordem == 'D' ? _context.Produtos.OrderByDescending(p => p.DataCadastro) : _context.Produtos.OrderBy(p => p.DataCadastro));
+            }
         }
 
     }
